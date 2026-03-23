@@ -1,0 +1,32 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000p\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000-\u0000i\u0000n\u0000t\u0000r\u0000o\u0000-\u0000d\u0000b\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artisthelios-pdht/project-intro-db.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artisthelios-pdht/project-intro-db/issues"
+  },
+  "homepage": "https://github.com/artisthelios-pdht/project-intro-db#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.6",
+    "express-handlebars-sections": "^1.0.1",
+    "knex": "^3.2.3",
+    "mysql2": "^3.20.0",
+    "nodemon": "^3.1.14"
+  }
+}
