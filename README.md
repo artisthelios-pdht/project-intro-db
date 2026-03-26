@@ -4,7 +4,7 @@ Dự án môn học Nhập môn Cơ sở dữ liệu thực hiện bởi sinh vi
 Đồ án với sự đóng góp của 6 thành viên:
 - Trần Huỳnh Long - 2403700010 - **LEADER**
 - Phạm Đăng Hoàng Thiên - 2403700151
-- Nguyễn Phúc Duy - 
+- Nguyễn Phúc Duy - 2403700173
 - Hồ Ngọc Vân Anh - 2403700192
 - Trần Nguyễn Phương Vy - 2403700319
 - Trần Thành Đạt - 2403700251
@@ -92,3 +92,6 @@ git push origin <tên-nhánh-của-bạn>
   - npm install nodemon
 - Cấu hình Database: Chạy các file trong script_sql/ và cập nhật thông tin kết nối trong utils/.
 - Chạy ứng dụng: node app.js (hoặc npm start nếu đã cấu hình).
+
+## Ghi chú
+Trước khi bắt đầu code, nhớ chạy git pull origin main để lấy code mới nhất về.
