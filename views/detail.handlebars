@@ -1,0 +1,79 @@
+<div class="container mt-4 mb-5">
+    <div class="mb-3">
+        <a href="/homelb" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left"></i> Quay lại danh mục
+        </a>
+    </div>
+
+    <div class="row bg-white p-4 rounded shadow-sm">
+        <div class="col-md-3 text-center">
+            <img src="https://loremflickr.com/320/450/book?lock={{book.book_ID}}" class="img-fluid rounded shadow"
+                alt="Bìa sách">
+            <div class="mt-3">
+                <span class="badge bg-primary fs-6">ID: #{{book.book_ID}}</span>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h2 class="text-primary fw-bold">{{book.book_Title}}</h2>
+            <hr>
+            <p><strong><i class="bi bi-pen"></i> Tác giả:</strong> {{book.author_Name}}</p>
+            <p><strong><i class="bi bi-building"></i> Nhà xuất bản:</strong> {{book.book_PublisherName}}</p>
+
+            <h5 class="mt-4 fw-bold text-success"><i class="bi bi-shop"></i> Tình trạng lưu kho</h5>
+            <table class="table table-bordered table-hover mt-2 text-center align-middle">
+                <thead class="table-success">
+                    <tr>
+                        <th>Chi nhánh</th>
+                        <th>Địa chỉ</th>
+                        <th>Số lượng bản sao</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each copies}}
+                    <tr>
+                        <td class="fw-semibold">{{this.branch_Name}}</td>
+                        <td>{{this.branch_Address}}</td>
+                        <td><span class="badge bg-success rounded-pill px-3">{{this.no_Of_Copies}}</span></td>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <td colspan="3" class="text-muted">Chưa có thông tin lưu kho.</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+            <h5 class="mt-4 fw-bold text-danger"><i class="bi bi-clock-history"></i> Đang được mượn bởi</h5>
+            <table class="table table-bordered table-hover mt-2 text-center align-middle">
+                <thead class="table-danger">
+                    <tr>
+                        <th>Mã độc giả</th>
+                        <th>Tên người mượn</th>
+                        <th>Ngày mượn</th>
+                        <th>Hạn trả</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each loans}}
+                    <tr>
+                        <td>#{{this.card_No}}</td>
+                        <td class="fw-semibold">{{this.borrower_Name}}</td>
+                        <td>{{this.date_Out}}</td>
+                        <td>{{this.date_Due}}</td>
+                        <td>
+                            <span class="badge bg-{{this.status_color}}">{{this.status_text}}</span>
+                        </td>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <td colspan="5" class="text-muted">Sách này hiện chưa có ai mượn.</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
