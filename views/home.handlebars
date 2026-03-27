@@ -1,65 +1,65 @@
 <div class="container mt-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="text-primary"><i class="bi bi-book"></i> Thư viện</h2>
-    <a href="/add" class="btn btn-success">+ Thêm sách mới</a>
+    <a href="#" class="btn btn-success">+ Thêm sách mới</a>
   </div>
 
   {{#if this.empty}}
-    <div class="alert alert-info text-center">
-      <p>Trống trơn à! Hãy thử nhập thêm sách vào nhé.</p>
-    </div>
+  <div class="alert alert-info text-center">
+    <p>Trống trơn à! Hãy thử nhập thêm sách vào nhé.</p>
+  </div>
   {{else}}
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-      {{#each this.items}}
-      <div class="col">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="https://loremflickr.com/320/240/book?lock={{book_ID}}" class="card-img-top" alt="{{book_Title}}">
-          
-          <div class="card-body">
-            <h5 class="card-title text-truncate" title="{{book_Title}}">
-                {{book_Title}}
-            </h5>
-            <p class="card-text text-muted small">
-              <i class="bi bi-building"></i> NXB: {{book_PublisherName}}
-            </p>
-            <p class="card-text">
-                <span class="badge bg-info text-dark">ID: #{{book_ID}}</span>
-            </p>
-          </div>
-          
-          <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between">
-            <a href="/edit/{{book_ID}}" class="btn btn-outline-primary btn-sm">Sửa</a>
-            <button class="btn btn-outline-danger btn-sm">Xóa</button>
-          </div>
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+    {{#each this.items}}
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="https://loremflickr.com/320/240/book?lock={{book_ID}}" class="card-img-top" alt="{{book_Title}}">
+
+        <div class="card-body">
+          <h5 class="card-title text-truncate" title="{{book_Title}}">
+            <a href="/detail/{{book_ID}}" class="text-decoration-none text-dark">{{book_Title}}</a>
+          </h5>
+          <p class="card-text text-muted small">
+            <i class="bi bi-building"></i> NXB: {{book_PublisherName}}
+          </p>
+          <p class="card-text">
+            <span class="badge bg-info text-dark">ID: #{{book_ID}}</span>
+          </p>
+        </div>
+
+        <div class="card-footer bg-transparent border-top-0 d-flex justify-content-between">
+          <a href="#" class="btn btn-outline-primary btn-sm">Sửa</a>
+          <button class="btn btn-outline-danger btn-sm">Xóa</button>
         </div>
       </div>
-      {{/each}}
     </div>
+    {{/each}}
+  </div>
   {{/if}}
   <nav aria-label="Page navigation" class="mt-5 pb-5">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item {{#if is_first}}disabled{{/if}}">
-      <a class="page-link" href="?page={{prev_value}}" tabindex="-1">Previous</a>
-    </li>
+    <ul class="pagination justify-content-center">
 
-    {{#each page_numbers}}
+      <li class="page-item {{#if is_first}}disabled{{/if}}">
+        <a class="page-link" href="?page={{prev_value}}" tabindex="-1">Previous</a>
+      </li>
+
+      {{#each page_numbers}}
       {{#if isCurrent}}
-        <li class="page-item active" aria-current="page">
-          <span class="page-link">{{value}}</span>
-        </li>
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">{{value}}</span>
+      </li>
       {{else}}
-        <li class="page-item">
-          <a class="page-link" href="?page={{value}}">{{value}}</a>
-        </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{value}}">{{value}}</a>
+      </li>
       {{/if}}
-    {{/each}}
+      {{/each}}
 
-    <li class="page-item {{#if is_last}}disabled{{/if}}">
-      <a class="page-link" href="?page={{next_value}}">Next</a>
-    </li>
+      <li class="page-item {{#if is_last}}disabled{{/if}}">
+        <a class="page-link" href="?page={{next_value}}">Next</a>
+      </li>
 
-  </ul>
-</nav>
+    </ul>
+  </nav>
 
 </div>
