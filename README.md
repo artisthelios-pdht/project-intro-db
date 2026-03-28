@@ -23,25 +23,22 @@ Kiến trúc: MVC (Model-View-Controller) cơ bản
 
 ## Cấu trúc thư mục 
 Dựa trên cấu trúc hiện tại của dự án:
-
+```
 Project/
-
-├── app.js                # Server chính và cấu hình route
-
-├── script_sql/           # Chứa các file truy vấn, tạo bảng SQL
-
-├── views/                # Chứa giao diện Handlebars (.handlebars)
-
-│   ├── layouts/          # Giao diện khung (Main layout)
-
+├── script_sql/           # Chứa các tập tin script tạo bảng và dữ liệu mẫu SQL
+├── utils/                # Các tiện ích và cấu hình dùng chung (Helper functions)
+│   └── db.js             # Cấu hình kết nối cơ sở dữ liệu (MySQL)
+├── views/                # Thư mục chứa các tệp giao diện (Handlebars templates)
+│   ├── layouts/          # Chứa các giao diện khung mẫu 
+│   │   └── main.handlebars # Giao diện bao ngoài (chứa Header, Footer, Nav)
+│   ├── detail.handlebars # Giao diện hiển thị chi tiết
 │   └── home.handlebars   # Giao diện trang chủ
-
-├── utils/                # Các hàm tiện ích, cấu hình kết nối DB
-
-├── public/               # (Tùy chọn) Chứa CSS, hình ảnh, JS phía client
-
-└── package.json          # Quản lý thư viện và scripts của Node.js
-
+├── .gitignore           
+├── app.js                # Tệp khởi đầu của ứng dụng 
+├── package.json          
+├── package-lock.json    
+└── README.md             
+```
 ## Hướng dẫn cho thành viên trong nhóm
 
 ### 1. Quy định Commit Code (Bắt buộc)
@@ -81,6 +78,7 @@ git push origin <tên-nhánh-của-bạn>
 ## Cài đặt môi trường phát triển
 
 - Tải mã nguồn: git clone <link-github-repo>
+- Tải nodejs theo đường dẫn: https://nodejs.org/en/download
 - Cài đặt thư viện: 
   - npm init -y
   - npm i express
