@@ -6,7 +6,7 @@ const db = knex({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: '123456',
+    password: '0909206693Thienhoangpd@#',
     database: 'librarymanagement'
   },
   pool: { min: 0, max: 10 }
